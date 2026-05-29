@@ -1,1 +1,0 @@
-export default function DeliveryChallan(){return <div>Delivery Challan</div>}
