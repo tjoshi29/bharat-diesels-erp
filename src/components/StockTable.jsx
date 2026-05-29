@@ -1,0 +1,1 @@
+export default function StockTable(){return <div>Table</div>}
