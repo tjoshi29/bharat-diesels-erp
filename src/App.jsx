@@ -3,6 +3,11 @@ import React, { useState } from "react";
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [page, setPage] = useState("dashboard");
+  const [sapCode, setSapCode] = useState("");
+const [chassisNo, setChassisNo] = useState("");
+const [engineNo, setEngineNo] = useState("");
+const [model, setModel] = useState("");
+const [branch, setBranch] = useState("")
 
   if (!loggedIn) {
     return (
@@ -102,12 +107,67 @@ export default function App() {
         )}
 
         {page === "stock" && (
-          <>
-            <h1>Stock Management</h1>
-            <p>Stock module ready.</p>
-          </>
-        )}
+  <>
+    <h1>Stock Management</h1>
 
+    <div
+      style={{
+        background: "#fff",
+        padding: "20px",
+        border: "1px solid #ddd",
+        borderRadius: "10px",
+        maxWidth: "600px"
+      }}
+    >
+      <input
+        placeholder="SAP Code"
+        value={sapCode}
+        onChange={(e) => setSapCode(e.target.value)}
+        style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+      />
+
+      <input
+        placeholder="Chassis No"
+        value={chassisNo}
+        onChange={(e) => setChassisNo(e.target.value)}
+        style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+      />
+
+      <input
+        placeholder="Engine No"
+        value={engineNo}
+        onChange={(e) => setEngineNo(e.target.value)}
+        style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+      />
+
+      <input
+        placeholder="Model"
+        value={model}
+        onChange={(e) => setModel(e.target.value)}
+        style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+      />
+
+      <input
+        placeholder="Branch"
+        value={branch}
+        onChange={(e) => setBranch(e.target.value)}
+        style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+      />
+
+      <button
+        onClick={() => alert("Stock Entry Saved (Demo)")}
+        style={{
+          padding: "10px 20px",
+          background: "#1e3a8a",
+          color: "white",
+          border: "none"
+        }}
+      >
+        Add Stock
+      </button>
+    </div>
+  </>
+)}
         {page === "delivery" && (
           <>
             <h1>Delivery Challan</h1>
