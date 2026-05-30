@@ -7,10 +7,26 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 
 const users = [
-{ username: "owner", password: "owner123", role: "Owner" },
-{ username: "manager", password: "manager123", role: "Manager" },
-{ username: "cashier", password: "cash123", role: "Cashier" },
-{ username: "rto", password: "rto123", role: "RTO" }
+{
+username: "owner",
+password: "owner123",
+role: "Owner"
+},
+{
+username: "manager",
+password: "manager123",
+role: "Manager"
+},
+{
+username: "cashier",
+password: "cash123",
+role: "Cashier"
+},
+{
+username: "rto",
+password: "rto123",
+role: "RTO"
+}
 ];
 
 const login = () => {
@@ -39,7 +55,8 @@ display: "flex",
 justifyContent: "center",
 alignItems: "center",
 height: "100vh",
-background: "#f1f5f9"
+background: "#f1f5f9",
+fontFamily: "Arial"
 }}
 >
 <div
@@ -47,12 +64,14 @@ style={{
 background: "white",
 padding: "30px",
 width: "350px",
-borderRadius: "10px"
+borderRadius: "10px",
+boxShadow: "0 0 10px rgba(0,0,0,0.1)"
 }}
 > <h2>Bharat Diesels ERP</h2>
 
 ```
       <input
+        type="text"
         placeholder="Username"
         value={username}
         onChange={(e) =>
@@ -83,7 +102,11 @@ borderRadius: "10px"
         onClick={login}
         style={{
           width: "100%",
-          padding: "10px"
+          padding: "10px",
+          background: "#1e3a8a",
+          color: "white",
+          border: "none",
+          cursor: "pointer"
         }}
       >
         Login
@@ -135,4 +158,3 @@ fontFamily: "Arial"
 
 );
 }
-
